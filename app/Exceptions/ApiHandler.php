@@ -89,6 +89,6 @@ trait ApiHandler
      */
     protected function genericException(\Throwable $e): JsonResponse
     {
-        return resposta_padrao("erro interno no servidor", "internal_error", 500);
+        return resposta_padrao($e->getMessage(), "internal_error", 500);
     }
 }
