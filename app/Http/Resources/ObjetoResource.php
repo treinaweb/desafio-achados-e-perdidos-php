@@ -26,7 +26,7 @@ class ObjetoResource extends JsonResource
                 [
                     'type' => 'GET',
                     'rel' => 'self',
-                    'uri' => route('objetos.show', $this->id)
+                    'uri' => route('objetos.show', $this->id, false)
                 ],
             ]
         ];

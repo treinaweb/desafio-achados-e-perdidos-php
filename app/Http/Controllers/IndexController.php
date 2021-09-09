@@ -19,12 +19,12 @@ class IndexController extends Controller
                 [
                     'type' => 'POST',
                     'rel' => 'criar_local',
-                    'uri' => route('locais.store')
+                    'uri' => route('locais.store', [], false)
                 ],
                 [
                     'type' => 'GET',
                     'rel' => 'buscar_locais',
-                    'uri' => route('locais.index')
+                    'uri' => route('locais.index', [], false)
                 ]
             ]
         ];

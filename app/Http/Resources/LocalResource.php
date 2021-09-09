@@ -28,22 +28,22 @@ class LocalResource extends JsonResource
                 [
                     'type' => 'GET',
                     'rel' => 'self',
-                    'uri' => route('locais.show')
+                    'uri' => route('locais.show', [], false)
                 ],
                 [
                     'type' => 'PUT',
                     'rel' => 'atualizar_local',
-                    'uri' => route('locais.update')
+                    'uri' => route('locais.update', [], false)
                 ],
                 [
                     'type' => 'DELETE',
                     'rel' => 'apagar_local',
-                    'uri' => route('locais.destroy')
+                    'uri' => route('locais.destroy', [], false)
                 ],
                 [
                     'type' => 'POST',
                     'rel' => 'definir_imagem_local',
-                    'uri' => route('locais.image')
+                    'uri' => route('locais.image', [], false)
                 ]
             ]
         ];

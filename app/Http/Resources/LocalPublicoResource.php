@@ -25,7 +25,7 @@ class LocalPublicoResource extends JsonResource
                 [
                     'type' => 'GET',
                     'rel' => 'objetos_local',
-                    'uri' => route('locais.objetos.index', $this->id)
+                    'uri' => route('locais.objetos.index', $this->id, false)
                 ]
             ]
         ];
