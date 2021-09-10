@@ -46,19 +46,25 @@ class ObjetoResource extends JsonResource
             $estrutura['links'][] = [
                         'type' => 'PUT',
                         'rel' => 'atualizar_objeto',
-                        'uri' => route('objetos.update', $this->id)
+                        'uri' => route('objetos.update', $this->id, false)
             ];
 
             $estrutura['links'][] = [
                         'type' => 'DELETE',
                         'rel' => 'apagar_objeto',
-                        'uri' => route('objetos.destroy', $this->id)
+                        'uri' => route('objetos.destroy', $this->id, false)
             ];
 
             $estrutura['links'][] = [
                         'type' => 'POST',
                         'rel' => 'definir_imagem_objeto',
-                        'uri' => route('objetos.image', $this->id)
+                        'uri' => route('objetos.image', $this->id, false)
+            ];
+
+            $estrutura['links'][] = [
+                        'type' => 'PATCH',
+                        'rel' => 'definir_dono_objeto',
+                        'uri' => route('objetos.owner', $this->id, false)
             ];
         }
 
