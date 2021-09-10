@@ -31,6 +31,11 @@ class LocalResource extends JsonResource
                     'uri' => route('locais.show', [], false)
                 ],
                 [
+                    'type' => 'POST',
+                    'rel' => 'cadastrar_local',
+                    'uri' => route('locais.store', [], false)
+                ],
+                [
                     'type' => 'PUT',
                     'rel' => 'atualizar_local',
                     'uri' => route('locais.update', [], false)
