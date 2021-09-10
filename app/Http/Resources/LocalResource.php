@@ -49,6 +49,16 @@ class LocalResource extends JsonResource
                     'type' => 'POST',
                     'rel' => 'definir_imagem_local',
                     'uri' => route('locais.image', [], false)
+                ],
+                [
+                    'type' => 'GET',
+                    'rel' => 'listar_objetos_local',
+                    'uri' => route('objetos.index', [], false)
+                ],
+                [
+                    'type' => 'POST',
+                    'rel' => 'adicionar_objeto_local',
+                    'uri' => route('objetos.store', [], false)
                 ]
             ]
         ];
