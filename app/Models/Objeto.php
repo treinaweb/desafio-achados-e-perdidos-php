@@ -16,6 +16,15 @@ class Objeto extends Model
     protected $fillable = ['nome', 'descricao', 'entregue'];
 
     /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'local_id' => 'int',
+    ];
+
+    /**
      * Define a relação com o local
      *
      * @return BelongsTo
