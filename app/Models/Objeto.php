@@ -22,6 +22,7 @@ class Objeto extends Model
      */
     protected $casts = [
         'local_id' => 'int',
+        'entregue' => 'int'
     ];
 
     /**
