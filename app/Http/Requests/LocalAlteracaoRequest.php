@@ -27,18 +27,18 @@ class LocalAlteracaoRequest extends FormRequest
         $usuario = Auth::user();
 
         $regras = [
-            'local.nome' => ['required', 'string', 'max:255'],
-            'local.endereco' => ['required', 'string', 'max:255'],
-            'local.contato' => ['required', 'string', 'max:255'],
-            'local.descricao' => ['required', 'string', 'max:255'],
+            'nome' => ['required', 'string', 'max:255'],
+            'endereco' => ['required', 'string', 'max:255'],
+            'contato' => ['required', 'string', 'max:255'],
+            'descricao' => ['required', 'string', 'max:255'],
 
             'usuario.nome' => ['required', 'string', 'max:255'],
             'usuario.email' => [
-                'required', 
-                'string', 
-                'email', 
-                'max:255', 
-                'unique:App\Models\User,email,'. $usuario->id
+                'required',
+                'string',
+                'email',
+                'max:255',
+                'unique:App\Models\User,email,' . $usuario->id
             ]
         ];
 

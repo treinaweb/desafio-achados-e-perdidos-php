@@ -21,13 +21,18 @@ class LocalController extends Controller
      */
     public function store(LocalCadastroRequest $request): LocalResource
     {
-        $usuario = DB::transaction(function() use ($request) {
+        $usuario = DB::transaction(function () use ($request) {
             $dadosUsuario = $request->usuario;
             $dadosUsuario['password'] = Hash::make($dadosUsuario['password']);
 
             $usuario = User::create($dadosUsuario);
 
-            $usuario->local()->create($request->local);
+            $usuario->local()->create($request->only([
+                'nome',
+                'endereco',
+                'contato',
+                'descricao'
+            ]));
 
             return $usuario;
         });
@@ -55,7 +60,7 @@ class LocalController extends Controller
     {
         $usuario = Auth::user();
 
-        DB::transaction(function() use ($request, $usuario) {
+        DB::transaction(function () use ($request, $usuario) {
             $dadosUsuario = $request->usuario;
 
             if ($request->has('usuario.password')) {
@@ -64,7 +69,12 @@ class LocalController extends Controller
 
             $usuario->update($dadosUsuario);
 
-            $usuario->local->update($request->local);
+            $usuario->local->update($request->only([
+                'nome',
+                'endereco',
+                'contato',
+                'descricao'
+            ]));
         });
 
         return new LocalResource($usuario->local);

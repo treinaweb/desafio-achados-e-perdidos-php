@@ -15,14 +15,12 @@ class LocalResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'local' => [
-                'id' => $this->id,
-                'nome' => $this->nome,
-                'endereco' => $this->endereco,
-                'contato' => $this->contato,
-                'descricao' => $this->descricao,
-                'imagem' => caminho_imagem($this->imagem_local),
-            ],
+            'id' => $this->id,
+            'nome' => $this->nome,
+            'endereco' => $this->endereco,
+            'contato' => $this->contato,
+            'descricao' => $this->descricao,
+            'imagem' => caminho_imagem($this->imagem_local),
             'usuario' => new UsuarioResource($this->user),
             'links' => [
                 [
